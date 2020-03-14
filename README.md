@@ -17,13 +17,13 @@ Require:
 
 ```javascript
 const { Vicis } = require("vicis");
-const { VicisTransformDate } = require("@vicis/transform-date/es");
+const { VicisTransformDate } = require("@vicis/transform-date");
 ```
 
 Import as ECMAScript module.
 
 ```javascript
-import { Vicis } from "vicis";
+import { Vicis } from "vicis/es";
 import { VicisTransformDate } from "@vicis/transform-date/es";
 ```
 
