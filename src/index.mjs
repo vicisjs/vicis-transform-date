@@ -34,28 +34,52 @@ function transformDateTime(dateTime, config) {
   return instance.toISOString(keepOffset);
 }
 
-function VicisTransformDateToDateTime(config) {
+/**
+ * @name vicisTransformDateToDateTime
+ * @param {Object|String} config
+ * @returns {function(*=): number | string}
+ */
+function vicisTransformDateToDateTime(config) {
   return (date) => transformDateTime(date, config);
 }
 
-function VicisTransformDateToUnix() {
+/**
+ * @name vicisTransformDateToUnix
+ * @returns {function(*=): number | string}
+ */
+function vicisTransformDateToUnix() {
   return (date) => transformDateTime(date, { unixTimestamp: true });
 }
 
-function VicisTransformDateToFormat(format) {
+/**
+ * @name vicisTransformDateToFormat
+ * @param {String} format
+ * @returns {function(*=): number | string}
+ */
+function vicisTransformDateToFormat(format) {
   return (date) => transformDateTime(date, { format });
 }
 
-function VicisTransformDateToISO(keepLocalTime = true, keepOffset = true, utcOffset) {
+/**
+ * @name vicisTransformDateToISO
+ * @param {Boolean=true} keepLocalTime
+ * @param {Boolean=true} keepOffset
+ * @param {Number|String=} utcOffset
+ * @returns {function(*=): number | string}
+ */
+function vicisTransformDateToISO(keepLocalTime = true, keepOffset = true, utcOffset) {
   return (date) => transformDateTime(date, { keepLocalTime, keepOffset, utcOffset });
 }
 
+/**
+ * @type {{toFormat: (function(String): function(*=): number | string), toUnix: (function(): function(*=): number | string), toISO: (function(Boolean=, Boolean=, (Number|String)=): function(*=): number | string), toDateTime: (function((Object|String)): function(*=): number | string), toFunction: (function(): function((Object|String)): function(*=): number | string)}}
+ */
 const VicisTransformDate = {
-  toDateTime: VicisTransformDateToDateTime,
-  toFormat: VicisTransformDateToFormat,
-  toISO: VicisTransformDateToISO,
-  toUnix: VicisTransformDateToUnix,
-  toFunction: () => VicisTransformDateToDateTime,
+  toDateTime: vicisTransformDateToDateTime,
+  toFormat: vicisTransformDateToFormat,
+  toISO: vicisTransformDateToISO,
+  toUnix: vicisTransformDateToUnix,
+  toFunction: () => vicisTransformDateToDateTime,
 };
 
 export { VicisTransformDate };
