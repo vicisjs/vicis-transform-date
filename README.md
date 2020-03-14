@@ -6,7 +6,7 @@ Vicis transformation plugin for date and time.
 
 [![NPM Version](https://img.shields.io/npm/v/@vicis/transform-date.svg?style=flat)]()
 [![NPM Downloads](https://img.shields.io/npm/dt/@vicis/transform-date.svg?style=flat)]()
-[![Dependency Status](https://david-dm.org/r37r0m0d3l/vicis-transform-date.svg)](https://david-dm.org/r37r0m0d3l/publish_subscribe)
+[![Dependency Status](https://david-dm.org/r37r0m0d3l/vicis-transform-date.svg)](https://david-dm.org/r37r0m0d3l/vicis-transform-date)
 [![devDependencies Status](https://david-dm.org/r37r0m0d3l/vicis-transform-date/dev-status.svg)](https://david-dm.org/r37r0m0d3l/vicis-transform-date?type=dev)
 
 ---

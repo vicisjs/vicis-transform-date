@@ -51,9 +51,12 @@
   ],
   "homepage": "https://vicis.js.org",
   "keywords": [
+    "@vicis",
     "api",
+    "date",
     "json",
     "json-api",
+    "plugin",
     "responder",
     "responder-chain",
     "response",
@@ -77,5 +80,5 @@
   },
   "type": "module",
   "types": "./dist/vicis-transform-date.d.ts",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
