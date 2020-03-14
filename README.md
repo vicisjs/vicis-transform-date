@@ -13,7 +13,7 @@ Vicis transformation plugin for date and time.
 
 ## Usage
 
-Require:
+Require.
 
 ```javascript
 const { Vicis } = require("vicis");
