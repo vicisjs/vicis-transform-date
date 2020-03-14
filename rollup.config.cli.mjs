@@ -1,4 +1,3 @@
-import autoExternal from "rollup-plugin-auto-external";
 import babel from "rollup-plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
@@ -23,7 +22,6 @@ export default {
   ],
   plugins: [
     babel({ babelrc: true }),
-    autoExternal(),
     resolve(),
     commonjs(),
     terser({
@@ -33,4 +31,5 @@ export default {
       keep_fnames: true,
     }),
   ],
+  external: ["moment"],
 };
