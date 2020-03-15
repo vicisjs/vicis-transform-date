@@ -27,7 +27,16 @@ import { Vicis } from "vicis/es";
 import { VicisTransformDate } from "@vicis/transform-date/es";
 ```
 
-## Examples
+Export separately as functions.
+
+```javascript
+const {
+  VicisTransformDate,
+  toDateTime, toFormat, toHourMinSec, toISO, toISO8601, toRFC2822, toUnix, toYearMonthDay,
+} = require("@vicis/transform-date");
+```
+
+## API
 
 ```javascript
 const serializer = Vicis.factory();
@@ -40,68 +49,85 @@ serializer.data(model);
 
 ```javascript
 console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:30.290Z"}
+// {"createdAt":"2020-06-15T12:30:45.290Z"}
 ```
 
-### Default with plugin - ISO 8601
+### toDateTime()
 
 ```javascript
 serializer.transform({
   createdAt: VicisTransformDate.toDateTime(),
 });
-console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:30.000+03:00"}
+// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
 ```
 
-### Unix Timestamp
+### toFormat()
+
+```javascript
+const format = "YYYY-MM-DD HH:mm:ss";
+serializer.transform({
+  createdAt: VicisTransformDate.toFormat(format),
+});
+// {"createdAt":"2020-06-15 12:30:45"}
+```
+
+### toHourMinSec()
+
+```javascript
+serializer.transform({
+  createdAt: VicisTransformDate.toHourMinSec(),
+});
+// {"createdAt":"12:30:45"}
+```
+
+### toISO()
+
+```javascript
+serializer.transform({
+  createdAt: VicisTransformDate.toISO(),
+});
+// {"createdAt":"2020-06-15T12:30:45.000Z"}
+```
+
+### toISO8601()
+
+```javascript
+serializer.transform({
+  createdAt: VicisTransformDate.toISO8601(),
+});
+// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
+```
+
+### toRFC2822()
+
+```javascript
+serializer.transform({
+  createdAt: VicisTransformDate.toRFC2822(),
+});
+// {"createdAt":"Mon, 15 Jun 2020 12:30:45 GMT"}
+```
+
+### toUnix()
 
 ```javascript
 serializer.transform({
   createdAt: VicisTransformDate.toUnix(),
 });
-console.log(serializer.toString());
-// {"createdAt":1584141035290}
+// {"createdAt":1592224245000}
 ```
 
-### ISO
-
-#### ISO with configuration
+### toYearMonthDay()
 
 ```javascript
-const keepLocalTime = true; // default is true
-const keepOffset = false; // default is false
-const utcOffset = undefined; // default is undefined
 serializer.transform({
-  createdAt: VicisTransformDate.toISO(keepLocalTime, keepOffset, utcOffset),
+  createdAt: VicisTransformDate.toYearMonthDay(),
 });
-console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:30.000Z"}
-```
-
-ISO 8601 with configuration.
-
-```javascript
-const keepLocalTime = true; // default is true
-const utcOffset = "+06:00"; // default is undefined
-serializer.transform({
-  createdAt: VicisTransformDate.toISO8601(keepLocalTime, utcOffset),
-});
-console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:30.000+06:00"}
-```
-
-Formatted string.
-
-```javascript
-const format = "YYYY-MM-DD";
-serializer.transform({
-  createdAt: VicisTransformDate.toFormat(format),
-});
-console.log(serializer.toString());
 // {"createdAt":"2020-06-15"}
 ```
 
-From configuration. Priority: unixTimestamp, format, anything else for iso formatting.
+### toDateTime() with configuration
+
+Priority: unixTimestamp, format, anything else for iso formatting.
 
 ```javascript
 const config = {
@@ -115,7 +141,7 @@ serializer.transform({
   createdAt: VicisTransformDate.toDateTime(config),
 });
 console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:30.000+03:00"}
+// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
 ```
 
 ---
