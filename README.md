@@ -140,7 +140,6 @@ const config = {
 serializer.transform({
   createdAt: VicisTransformDate.toDateTime(config),
 });
-console.log(serializer.toString());
 // {"createdAt":"2020-06-15T12:30:45.000+00:00"}
 ```
 
