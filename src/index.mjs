@@ -148,7 +148,15 @@ class VicisTransformDate {
    * @throws Error
    */
   static toFormat = toFormat;
-  static toFunction = () => toDateTime;
+  /**
+   * @name toFunction
+   * @static
+   * @public
+   * @returns {function((string|object)=): function(*=): number|string}
+   */
+  static toFunction() {
+    return toDateTime;
+  }
   /**
    * @name toHourMinSec
    * @static
@@ -206,6 +214,14 @@ class VicisTransformDate {
    * @throws Error
    */
   static toYearMonthDay = toYearMonthDay;
+  /**
+   * @name toFunction
+   * @public
+   * @returns {function((string|object)=): function(*=): number|string}
+   */
+  toFunction() {
+    return toDateTime;
+  }
 }
 
 export { VicisTransformDate };

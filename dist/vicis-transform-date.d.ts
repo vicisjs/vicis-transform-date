@@ -114,6 +114,13 @@ declare class VicisTransformDate {
    */
   static toFormat(format?: string, utcOffset?: number | string): (date: string | Date) => string;
   /**
+   * @name toFunction
+   * @static
+   * @public
+   * @returns {function((string|object)=): function(*=): number|string}
+   */
+  static toFunction(format?: string, utcOffset?: number | string): (date: string | Date) => string;
+  /**
    * @name toHourMinSec
    * @static
    * @public
@@ -174,6 +181,12 @@ declare class VicisTransformDate {
    * @throws Error
    */
   static toYearMonthDay(utcOffset?: number | string): (date: string | Date) => string;
+  /**
+   * @name toFunction
+   * @public
+   * @returns {function((string|object)=): function(*=): number|string}
+   */
+  public toFunction(): (date: string | Date) => string;
 }
 
 export { VicisTransformDate };
