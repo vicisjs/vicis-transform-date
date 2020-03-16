@@ -155,7 +155,7 @@ class VicisTransformDate {
    * @returns {function((string|object)=): function(*=): number|string}
    */
   static toFunction() {
-    return toDateTime;
+    return transform;
   }
   /**
    * @name toHourMinSec
@@ -220,7 +220,7 @@ class VicisTransformDate {
    * @returns {function((string|object)=): function(*=): number|string}
    */
   toFunction() {
-    return toDateTime;
+    return transform;
   }
 }
 

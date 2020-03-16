@@ -119,7 +119,7 @@ declare class VicisTransformDate {
    * @public
    * @returns {function((string|object)=): function(*=): number|string}
    */
-  static toFunction(format?: string, utcOffset?: number | string): (date: string | Date) => string;
+  static toFunction(format?: string, utcOffset?: number | string): (date: number | string | Date) => number | string;
   /**
    * @name toHourMinSec
    * @static
@@ -186,7 +186,7 @@ declare class VicisTransformDate {
    * @public
    * @returns {function((string|object)=): function(*=): number|string}
    */
-  public toFunction(): (date: string | Date) => string;
+  public toFunction(): (date: number | string | Date) => number | string;
 }
 
 export { VicisTransformDate };
