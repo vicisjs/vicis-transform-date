@@ -174,6 +174,20 @@ serializer.transform({
 { "createdAt": "2020-06-15T12:30:45.000+00:00" }
 ```
 
+## ⚠ For test purposes only ⚠
+
+If you are 💯 sure that you have correct dates and UTC offsets.
+
+```javascript
+serializer.transform({
+  createdAt: VicisTransformDate,
+});
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
+```
+
 ---
 
 *If you use this project don't forget to give a ⭐
