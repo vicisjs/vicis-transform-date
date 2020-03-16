@@ -32,7 +32,8 @@ Export separately as functions.
 ```javascript
 const {
   VicisTransformDate,
-  toDateTime, toFormat, toHourMinSec, toISO, toISO8601, toRFC2822, toUnix, toYearMonthDay,
+  toDateTime, toFormat, toHourMinSec, toISO,
+  toISO8601, toRFC2822, toUnix, toYearMonthDay,
 } = require("@vicis/transform-date");
 ```
 
@@ -48,8 +49,11 @@ serializer.data(model);
 ### Default serializer behaviour
 
 ```javascript
-console.log(serializer.toString());
-// {"createdAt":"2020-06-15T12:30:45.290Z"}
+console.log(serializer.getData());
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.290Z" }
 ```
 
 ### toDateTime()
@@ -58,7 +62,10 @@ console.log(serializer.toString());
 serializer.transform({
   createdAt: VicisTransformDate.toDateTime(),
 });
-// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
 ```
 
 ### toFormat()
@@ -68,7 +75,10 @@ const format = "YYYY-MM-DD HH:mm:ss";
 serializer.transform({
   createdAt: VicisTransformDate.toFormat(format),
 });
-// {"createdAt":"2020-06-15 12:30:45"}
+```
+
+```json
+{ "createdAt": "2020-06-15 12:30:45" }
 ```
 
 ### toHourMinSec()
@@ -77,7 +87,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toHourMinSec(),
 });
-// {"createdAt":"12:30:45"}
+```
+
+```json
+{ "createdAt": "12:30:45" }
 ```
 
 ### toISO()
@@ -86,7 +99,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toISO(),
 });
-// {"createdAt":"2020-06-15T12:30:45.000Z"}
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.000Z" }
 ```
 
 ### toISO8601()
@@ -95,7 +111,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toISO8601(),
 });
-// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
 ```
 
 ### toRFC2822()
@@ -104,7 +123,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toRFC2822(),
 });
-// {"createdAt":"Mon, 15 Jun 2020 12:30:45 GMT"}
+```
+
+```json
+{ "createdAt": "Mon, 15 Jun 2020 12:30:45 GMT" }
 ```
 
 ### toUnix()
@@ -113,7 +135,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toUnix(),
 });
-// {"createdAt":1592224245000}
+```
+
+```json
+{ "createdAt": 1592224245000 }
 ```
 
 ### toYearMonthDay()
@@ -122,7 +147,10 @@ serializer.transform({
 serializer.transform({
   createdAt: VicisTransformDate.toYearMonthDay(),
 });
-// {"createdAt":"2020-06-15"}
+```
+
+```json
+{ "createdAt": "2020-06-15" }
 ```
 
 ### toDateTime() with configuration
@@ -140,7 +168,10 @@ const config = {
 serializer.transform({
   createdAt: VicisTransformDate.toDateTime(config),
 });
-// {"createdAt":"2020-06-15T12:30:45.000+00:00"}
+```
+
+```json
+{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
 ```
 
 ---
