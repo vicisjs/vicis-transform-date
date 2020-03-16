@@ -112,14 +112,25 @@ declare class VicisTransformDate {
    * @returns {function(*=): number|string}
    * @throws Error
    */
-  static toFormat(format?: string, utcOffset?: number | string): (date: string | Date) => string;
+  public static toFormat(format?: string, utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toFunction
    * @static
    * @public
-   * @returns {function((string|object)=): function(*=): number|string}
+   * @param {string|object=} config
+   * @returns {function(*=): number|string}
    */
-  static toFunction(format?: string, utcOffset?: number | string): (date: number | string | Date) => number | string;
+  public static toFunction(
+    config?:
+      | string
+      | {
+      format?: string;
+      keepLocalTime?: boolean;
+      keepOffset?: boolean;
+      unixTimestamp?: boolean;
+      utcOffset?: number | string;
+    },
+  ): (date: number | string | Date) => number | string;
   /**
    * @name toHourMinSec
    * @static
@@ -128,7 +139,7 @@ declare class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toHourMinSec(utcOffset?: number | string): (date: string | Date) => string;
+  public static toHourMinSec(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toISO8601
    * @static
@@ -138,7 +149,7 @@ declare class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toISO8601(keepLocalTime?: boolean, utcOffset?: number | string): (date: string | Date) => string;
+  public static toISO8601(keepLocalTime?: boolean, utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toISO
    * @static
@@ -149,7 +160,7 @@ declare class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toISO(
+  public static toISO(
     keepLocalTime?: boolean,
     keepOffset?: boolean,
     utcOffset?: number | string,
@@ -162,7 +173,7 @@ declare class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toRFC2822(utcOffset?: number | string): (date: string | Date) => string;
+  public static toRFC2822(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toUnix
    * @static
@@ -171,7 +182,7 @@ declare class VicisTransformDate {
    * @returns {function(*=): number}
    * @throws Error
    */
-  static toUnix(utcOffset?: number | string): (date: string | Date) => string;
+  public static toUnix(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toYearMonthDay
    * @static
@@ -180,13 +191,24 @@ declare class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toYearMonthDay(utcOffset?: number | string): (date: string | Date) => string;
+  public static toYearMonthDay(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toFunction
    * @public
-   * @returns {function((string|object)=): function(*=): number|string}
+   * @param {string|object=} config
+   * @returns {function(*=): number|string}
    */
-  public toFunction(): (date: number | string | Date) => number | string;
+  public toFunction(
+    config?:
+      | string
+      | {
+      format?: string;
+      keepLocalTime?: boolean;
+      keepOffset?: boolean;
+      unixTimestamp?: boolean;
+      utcOffset?: number | string;
+    },
+  ): (date: number | string | Date) => number | string;
 }
 
 export { VicisTransformDate };

@@ -152,10 +152,11 @@ class VicisTransformDate {
    * @name toFunction
    * @static
    * @public
-   * @returns {function((string|object)=): function(*=): number|string}
+   * @param {string|object=} config
+   * @returns {function(*=): number|string}
    */
-  static toFunction() {
-    return transform;
+  static toFunction(config) {
+    return (date) => transform(date, config);
   }
   /**
    * @name toHourMinSec
@@ -217,10 +218,11 @@ class VicisTransformDate {
   /**
    * @name toFunction
    * @public
-   * @returns {function((string|object)=): function(*=): number|string}
+   * @param {string|object=} config
+   * @returns {function(*=): number|string}
    */
-  toFunction() {
-    return transform;
+  toFunction(config) {
+    return (date) => transform(date, config);
   }
 }
 
