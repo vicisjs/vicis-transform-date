@@ -11,8 +11,13 @@ function transform(dateTime, config) {
   if (!dateTime) {
     throw new Error(`Invalid Date: ${dateTime}`);
   }
-  if (typeof config === "string") {
-    config = { format: config };
+  let options = {};
+  if (config) {
+    if (typeof config === "string") {
+      Object.assign(options, { format: config });
+    } else {
+      Object.assign(options, config);
+    }
   }
   const { format, keepLocalTime, keepOffset, rfc2822, unixTimestamp, utcOffset } = {
     ...{
@@ -23,7 +28,7 @@ function transform(dateTime, config) {
       utcOffset: undefined,
       rfc2822: false,
     },
-    ...config,
+    ...options,
   };
   const instance = moment(dateTime);
   if (!instance.isValid()) {
@@ -36,7 +41,7 @@ function transform(dateTime, config) {
     return instance.valueOf();
   }
   if (typeof format === "string") {
-    return instance.format(config.format);
+    return instance.format(options.format);
   }
   if (rfc2822 === true) {
     return instance.toDate().toUTCString();
