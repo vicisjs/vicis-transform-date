@@ -1,3 +1,5 @@
+![Vicis](docs/_media/128.png?raw=true "Vicis")
+
 # Vicis Transform Date
 
 Vicis transformation plugin for date and time.
