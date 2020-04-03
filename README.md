@@ -6,10 +6,11 @@ Vicis transformation plugin for date and time.
 
 [🗎 Vicis Documentation 🗎](https://vicis.js.org)
 
-[![NPM Version](https://img.shields.io/npm/v/@vicis/transform-date.svg?style=flat)]()
-[![NPM Downloads](https://img.shields.io/npm/dt/@vicis/transform-date.svg?style=flat)]()
-[![GitHub stars](https://img.shields.io/github/stars/r37r0m0d3l/vicis-transform-date.svg?style=social&label=Star)](https://github.com/r37r0m0d3l/vicis-transform-date)
-[![GitHub followers](https://img.shields.io/github/followers/r37r0m0d3l.svg?style=social&label=Follow)](https://github.com/r37r0m0d3l)
+[![npm](https://badgen.net/npm/v/@vicis/transform-date?&icon=npm&label=npm&color=DD3636)](https://github.com/r37r0m0d3l/vicis-transform-date)
+[![downloads](https://badgen.net/npm/dt/@vicis/transform-date?&icon=terminal&label=downloads&color=009688)](https://github.com/r37r0m0d3l/vicis-transform-date)
+[![stars](https://badgen.net/github/stars/r37r0m0d3l/vicis-transform-date?&icon=github&label=stars&color=ffcc33)](https://github.com/r37r0m0d3l/vicis-transform-date)
+[![types](https://badgen.net/npm/types/@vicis/transform-date?&icon=typescript&label=types&color=1E90FF)](https://github.com/r37r0m0d3l/vicis-transform-date)
+[![build](https://badgen.net/travis/r37r0m0d3l/vicis-transform-date?&icon=travis&label=build)](https://github.com/r37r0m0d3l/vicis-transform-date)
 
 ---
 
