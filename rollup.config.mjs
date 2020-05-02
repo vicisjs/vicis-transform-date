@@ -11,6 +11,16 @@ export default {
   input: `./src/${INPUT_NAME}`,
   output: [
     {
+      file: `./dist/${OUTPUT_NAME}.cjs`,
+      format: "cjs",
+      sourcemap: true,
+    },
+    {
+      file: `./dist/${OUTPUT_NAME}.mjs`,
+      format: "es",
+      sourcemap: true,
+    },
+    {
       file: `./dist/${OUTPUT_NAME}.js`,
       format: "umd",
       globals: { moment: "moment" },
