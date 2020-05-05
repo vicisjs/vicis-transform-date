@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "moment": "2.25.1"
+    "moment": "2.25.3"
   },
   "description": "Vicis transformation plugin for date and time",
   "devDependencies": {
