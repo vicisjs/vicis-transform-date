@@ -8,7 +8,7 @@ const {
   toRFC2822,
   toUnix,
   toYearMonthDay,
-} = require("../dist/vicis-transform-date.cjs");
+} = require("../dist/index.cjs");
 
 process.env.TZ = "Etc/Greenwich";
 

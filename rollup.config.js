@@ -1,10 +1,12 @@
 import babel from "rollup-plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
-import rollupPluginTerser from "rollup-plugin-terser";
+import * as rollupPluginTerser from "rollup-plugin-terser";
 
-const INPUT_NAME = "index.mjs";
-const OUTPUT_NAME = "vicis-transform-date";
+const { terser } = rollupPluginTerser;
+
+const INPUT_NAME = "index.js";
+const OUTPUT_NAME = "index";
 const UMD_NAME = "VicisTransformDate";
 
 export default {
@@ -32,13 +34,12 @@ export default {
     babel({ babelrc: true }),
     resolve(),
     commonjs(),
-    rollupPluginTerser.terser({
+    terser({
       keep_classnames: true,
       keep_fnames: true,
       output: {
         comments: false,
       },
-      sourcemap: true,
       warnings: true,
     }),
   ],

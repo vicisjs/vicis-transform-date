@@ -1,63 +1,20 @@
-import moment from "moment";
-moment.suppressDeprecationWarnings = true;
-
-/**
- * @name transform
- * @param {Date|number|string} dateTime
- * @param {*} config
- * @returns {number|string}
- */
-function transform(dateTime, config) {
-  if (!dateTime) {
-    throw new Error(`Invalid Date: ${dateTime}`);
-  }
-  let options = {};
-  if (config) {
-    if (typeof config === "string") {
-      Object.assign(options, { format: config });
-    } else {
-      Object.assign(options, config);
-    }
-  }
-  const { format, keepLocalTime, keepOffset, rfc2822, unixTimestamp, utcOffset } = {
-    ...{
-      format: undefined,
-      keepLocalTime: true,
-      keepOffset: true,
-      unixTimestamp: false,
-      utcOffset: undefined,
-      rfc2822: false,
-    },
-    ...options,
-  };
-  const instance = moment(dateTime);
-  if (!instance.isValid()) {
-    throw new Error(`Invalid Date: ${dateTime}`);
-  }
-  if (Number.isInteger(utcOffset) || (utcOffset && typeof utcOffset === "string")) {
-    instance.utcOffset(utcOffset, keepLocalTime);
-  }
-  if (unixTimestamp === true) {
-    return instance.valueOf();
-  }
-  if (typeof format === "string") {
-    return instance.format(options.format);
-  }
-  if (rfc2822 === true) {
-    return instance.toDate().toUTCString();
-  }
-  return instance.toISOString(keepOffset);
-}
-
 /**
  * @name toDateTime
  * @param {string|object=} config
  * @returns {function(*=): number|string}
  * @throws Error
  */
-export function toDateTime(config) {
-  return (date) => transform(date, config);
-}
+export declare function toDateTime(
+  config?:
+    | string
+    | {
+        format?: string;
+        keepLocalTime?: boolean;
+        keepOffset?: boolean;
+        unixTimestamp?: boolean;
+        utcOffset?: number | string;
+      },
+): (date: string | Date) => string | number;
 
 /**
  * @name toFormat
@@ -66,9 +23,7 @@ export function toDateTime(config) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toFormat(format = "YYYY-MM-DD HH:mm:ss", utcOffset) {
-  return (date) => transform(date, { format, utcOffset });
-}
+export declare function toFormat(format?: string, utcOffset?: number | string): (date: string | Date) => string;
 
 /**
  * @name toHourMinSec
@@ -76,9 +31,7 @@ export function toFormat(format = "YYYY-MM-DD HH:mm:ss", utcOffset) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toHourMinSec(utcOffset) {
-  return (date) => transform(date, { format: "HH:mm:ss", utcOffset });
-}
+export declare function toHourMinSec(utcOffset?: number | string): (date: string | Date) => string;
 
 /**
  * @name toISO8601
@@ -87,9 +40,10 @@ export function toHourMinSec(utcOffset) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toISO8601(keepLocalTime = true, utcOffset) {
-  return (date) => transform(date, { keepLocalTime, keepOffset: true, utcOffset });
-}
+export declare function toISO8601(
+  keepLocalTime?: boolean,
+  utcOffset?: number | string,
+): (date: string | Date) => string;
 
 /**
  * @name toISO
@@ -99,9 +53,11 @@ export function toISO8601(keepLocalTime = true, utcOffset) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toISO(keepLocalTime = true, keepOffset = false, utcOffset) {
-  return (date) => transform(date, { keepLocalTime, keepOffset, utcOffset });
-}
+export declare function toISO(
+  keepLocalTime?: boolean,
+  keepOffset?: boolean,
+  utcOffset?: number | string,
+): (date: string | Date) => string;
 
 /**
  * @name toRFC2822
@@ -109,9 +65,7 @@ export function toISO(keepLocalTime = true, keepOffset = false, utcOffset) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toRFC2822(utcOffset) {
-  return (date) => transform(date, { rfc2822: true, utcOffset });
-}
+export declare function toRFC2822(utcOffset?: number | string): (date: string | Date) => string;
 
 /**
  * @name toUnix
@@ -119,9 +73,7 @@ export function toRFC2822(utcOffset) {
  * @returns {function(*=): number}
  * @throws Error
  */
-export function toUnix(utcOffset) {
-  return (date) => transform(date, { unixTimestamp: true, utcOffset });
-}
+export declare function toUnix(utcOffset?: number | string): (date: string | Date) => string;
 
 /**
  * @name toYearMonthDay
@@ -129,11 +81,9 @@ export function toUnix(utcOffset) {
  * @returns {function(*=): string}
  * @throws Error
  */
-export function toYearMonthDay(utcOffset) {
-  return (date) => transform(date, { format: "YYYY-MM-DD", utcOffset });
-}
+export declare function toYearMonthDay(utcOffset?: number | string): (date: string | Date) => string;
 
-class VicisTransformDate {
+export declare class VicisTransformDate {
   /**
    * @name toDateTime
    * @static
@@ -142,7 +92,17 @@ class VicisTransformDate {
    * @returns {function(*=): number|string}
    * @throws Error
    */
-  static toDateTime = toDateTime;
+  public static toDateTime(
+    config?:
+      | string
+      | {
+          format?: string;
+          keepLocalTime?: boolean;
+          keepOffset?: boolean;
+          unixTimestamp?: boolean;
+          utcOffset?: number | string;
+        },
+  ): (date: string | Date) => string | number;
   /**
    * @name toFormat
    * @static
@@ -152,7 +112,7 @@ class VicisTransformDate {
    * @returns {function(*=): number|string}
    * @throws Error
    */
-  static toFormat = toFormat;
+  public static toFormat(format?: string, utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toFunction
    * @static
@@ -160,9 +120,17 @@ class VicisTransformDate {
    * @param {string|object=} config
    * @returns {function(*=): number|string}
    */
-  static toFunction(config) {
-    return (date) => transform(date, config);
-  }
+  public static toFunction(
+    config?:
+      | string
+      | {
+          format?: string;
+          keepLocalTime?: boolean;
+          keepOffset?: boolean;
+          unixTimestamp?: boolean;
+          utcOffset?: number | string;
+        },
+  ): (date: number | string | Date) => number | string;
   /**
    * @name toHourMinSec
    * @static
@@ -171,7 +139,7 @@ class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toHourMinSec = toHourMinSec;
+  public static toHourMinSec(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toISO8601
    * @static
@@ -181,7 +149,7 @@ class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toISO8601 = toISO8601;
+  public static toISO8601(keepLocalTime?: boolean, utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toISO
    * @static
@@ -192,7 +160,11 @@ class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toISO = toISO;
+  public static toISO(
+    keepLocalTime?: boolean,
+    keepOffset?: boolean,
+    utcOffset?: number | string,
+  ): (date: string | Date) => string;
   /**
    * @name toRFC2822
    * @static
@@ -201,7 +173,7 @@ class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toRFC2822 = toRFC2822;
+  public static toRFC2822(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toUnix
    * @static
@@ -210,7 +182,7 @@ class VicisTransformDate {
    * @returns {function(*=): number}
    * @throws Error
    */
-  static toUnix = toUnix;
+  public static toUnix(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toYearMonthDay
    * @static
@@ -219,16 +191,22 @@ class VicisTransformDate {
    * @returns {function(*=): string}
    * @throws Error
    */
-  static toYearMonthDay = toYearMonthDay;
+  public static toYearMonthDay(utcOffset?: number | string): (date: string | Date) => string;
   /**
    * @name toFunction
    * @public
    * @param {string|object=} config
    * @returns {function(*=): number|string}
    */
-  toFunction(config) {
-    return (date) => transform(date, config);
-  }
+  public toFunction(
+    config?:
+      | string
+      | {
+          format?: string;
+          keepLocalTime?: boolean;
+          keepOffset?: boolean;
+          unixTimestamp?: boolean;
+          utcOffset?: number | string;
+        },
+  ): (date: number | string | Date) => number | string;
 }
-
-export { VicisTransformDate };
