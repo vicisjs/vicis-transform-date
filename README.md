@@ -1,10 +1,13 @@
-![Vicis](docs/_media/128.png?raw=true "Vicis")
+![Vicis](.github/assets/banner.webp?raw=true "Vicis")
 
-# Vicis Transform Date
+# « Vicis Transform Date »
 
 Vicis transformation plugin for date and time.
 
-[📃 Vicis Documentation 📃](https://vicis.js.org)
+•• [Vicis Documentation](https://vicis.js.org) •• [JavaScript Repository](https://github.com/r37r0m0d3l/vicis) •• [Deno Repository](https://github.com/r37r0m0d3l/deno-vicis) ••
+
+[![Buy Me A Coffee][buymeacoffee-img]][buymeacoffee-url]
+![Tests](https://github.com/r37r0m0d3l/denof/workflows/Tests/badge.svg)
 
 [![npm](https://badgen.net/npm/v/@vicis/transform-date?&icon=npm&label=npm&color=DD3636)](https://www.npmjs.com/package/@vicis/transform-date)
 [![downloads](https://badgen.net/npm/dt/@vicis/transform-date?&icon=terminal&label=downloads&color=009688)](https://www.npmjs.com/package/@vicis/transform-date)
@@ -15,7 +18,7 @@ Vicis transformation plugin for date and time.
 
 ---
 
-## Usage
+## 💬 Usage
 
 Require CommonJS.
 
@@ -34,11 +37,11 @@ import { VicisTransformDate } from "@vicis/transform-date";
 Export separately as functions.
 
 ```javascript
-const {
+import {
   VicisTransformDate,
   toDateTime, toFormat, toHourMinSec, toISO,
   toISO8601, toRFC2822, toUnix, toYearMonthDay,
-} = require("@vicis/transform-date");
+} from "@vicis/transform-date";
 ```
 
 ## API
@@ -192,17 +195,13 @@ serializer.transform({
 { "createdAt": "2020-06-15T12:30:45.000+00:00" }
 ```
 
----
+## 🗺️ My other projects
 
-*If you use this project don't forget to give a ⭐
-[star](https://github.com/r37r0m0d3l/vicis) ⭐ to it on GitHub!*
+[Full list here](https://r37r0m0d3l.icu/open_source_map)
 
----
+<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">
 
-## See also
+<!-- Badges -->
 
-[My other projects](https://r37r0m0d3l.icu/open_source_map)
-
-<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">
-
----
+[buymeacoffee-url]: https://buymeacoffee.com/r37r0m0d3l
+[buymeacoffee-img]: https://img.shields.io/badge/support-buymeacoffee-1E90FF.svg?&logo=buy-me-a-coffee&label=support
