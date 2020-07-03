@@ -1,6 +1,6 @@
 {
   "name": "@vicis/transform-date",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -9509,9 +9509,9 @@
       }
     },
     "remark-lint-checkbox-character-style": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/remark-lint-checkbox-character-style/-/remark-lint-checkbox-character-style-2.0.0.tgz",
-      "integrity": "sha512-V+eTXFHrHCpFFG2RWaQM6lSetLLvpYC8WEZ9dMYSAUbeS/h0PhA7cB7j5kGH86RUwGCihawfzNAKbRmgGxL+DQ==",
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/remark-lint-checkbox-character-style/-/remark-lint-checkbox-character-style-2.0.1.tgz",
+      "integrity": "sha512-ANs1HaNOEYmc+O9Xyew7HRA48VXPnk7VLM76fLEf6bifXZU+VAJe+a6cmS+ohTSVSTjkMDl9dnbqiWQRE1U4zg==",
       "dev": true,
       "requires": {
         "unified-lint-rule": "^1.0.0",
@@ -10131,9 +10131,9 @@
       }
     },
     "remark-preset-lint-consistent": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/remark-preset-lint-consistent/-/remark-preset-lint-consistent-3.0.0.tgz",
-      "integrity": "sha512-T+Nm1FobzqHTKClGG2oYGVbF4zAv8HSipG0tEt30EsXzMXT7AILIXjKyuyIt5T0LOqXbz5aPbGtLMbMuPK8aEw==",
+      "version": "3.0.1",
+      "resolved": "https://registry.npmjs.org/remark-preset-lint-consistent/-/remark-preset-lint-consistent-3.0.1.tgz",
+      "integrity": "sha512-Q+i6iSHvEtklZHcrTcRzNy96gRUqnNXkVsZAiH1J06jrkarBoSakQOkWD5gpR7tGbfr9VchrntdWY+n0YSf9Ww==",
       "dev": true,
       "requires": {
         "remark-lint": "^7.0.0",
