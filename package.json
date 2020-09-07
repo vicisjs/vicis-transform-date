@@ -14,7 +14,7 @@
   },
   "description": "Vicis transformation plugin for date and time",
   "devDependencies": {
-    "@babel/core": "7.10.4",
+    "@babel/core": "7.11.6",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-private-methods": "7.10.4",
     "@babel/preset-env": "7.10.4",
