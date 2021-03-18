@@ -49,6 +49,6 @@
 
 #### Travis CI
 
-[![Build Status](https://badgen.net/travis/r37r0m0d3l/vicis-transform-date?&icon=travis)](https://travis-ci.org/r37r0m0d3l/vicis-transform-date)
+[![Build Status](https://badgen.net/travis/r37r0m0d3l/vicis-transform-date)](https://travis-ci.org/r37r0m0d3l/vicis-transform-date)
 
 [![Build Status](https://travis-ci.org/r37r0m0d3l/vicis-transform-date.svg?branch=master)](https://travis-ci.org/r37r0m0d3l/vicis-transform-date)

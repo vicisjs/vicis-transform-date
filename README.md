@@ -10,7 +10,7 @@ Vicis transformation plugin for date and time.
 [![downloads](https://badgen.net/npm/dt/@vicis/transform-date?&icon=terminal&label=downloads&color=009688)](https://www.npmjs.com/package/@vicis/transform-date)
 [![stars](https://badgen.net/github/stars/r37r0m0d3l/vicis-transform-date?&icon=github&label=stars&color=ffcc33)](https://github.com/r37r0m0d3l/vicis-transform-date)
 [![types](https://badgen.net/npm/types/@vicis/transform-date?&icon=typescript&label=types&color=1E90FF)](https://github.com/r37r0m0d3l/vicis-transform-date/blob/master/dist/vicis-transform-date.d.ts)
-[![build](https://badgen.net/travis/r37r0m0d3l/vicis-transform-date?&icon=travis&label=build)](https://travis-ci.org/r37r0m0d3l/vicis-transform-date)
+[![build](https://badgen.net/travis/r37r0m0d3l/vicis-transform-date?&label=build)](https://travis-ci.org/r37r0m0d3l/vicis-transform-date)
 [![lgtm](https://badgen.net/lgtm/grade/g/r37r0m0d3l/vicis-transform-date?&icon=lgtm&label=lgtm:js/ts&color=00C853)](https://lgtm.com/projects/g/r37r0m0d3l/vicis-transform-date/alerts/)
 
 ---
