@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "moment": "2.29.1"
+    "moment": "*"
   },
   "description": "Vicis transformation plugin for date and time",
   "devDependencies": {
@@ -36,9 +36,6 @@
     "rollup": "2.41.4",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-terser": "7.0.2"
-  },
-  "engines": {
-    "node": ">=12.9.0"
   },
   "engineStrict": true,
   "exports": {
@@ -99,5 +96,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.2.7"
+  "version": "1.2.8"
 }
